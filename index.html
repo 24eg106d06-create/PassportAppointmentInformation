@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" ng-app="passportInfo">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6fa">
+  <meta name="description" content="A simple guide to planning a passport appointment and preparing for your visit.">
+  <title>Passport Appointment Information — Plan your visit</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body ng-controller="PassportController as vm">
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Passport Appointment Information home">
+      <span class="brand-mark" aria-hidden="true">P</span>
+      <span class="brand-name">Passport<span>Guide</span></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#steps">How it works</a>
+      <a href="#prepare">What to prepare</a>
+      <a href="#faq">FAQs</a>
+    </nav>
+    <a class="top-action" href="#checklist">My checklist <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> PASSPORT APPOINTMENT INFORMATION</div>
+        <h1>A smoother start<br>to your <em>next journey.</em></h1>
+        <p class="hero-lede">Understand the usual appointment steps, organize your questions, and feel prepared before you visit an official passport office.</p>
+        <div class="hero-actions">
+          <a class="button-primary" href="#checklist">Build my checklist <span aria-hidden="true">→</span></a>
+          <a class="button-text" href="#steps">See the steps</a>
+        </div>
+        <p class="hero-note"><span aria-hidden="true">✦</span> A clear plan makes appointment day easier.</p>
+      </div>
+      <div class="hero-visual" aria-label="Illustration of a passport, travel ticket, and globe">
+        <div class="visual-orbit orbit-a"></div>
+        <div class="visual-orbit orbit-b"></div>
+        <div class="globe"><span class="globe-line line-a"></span><span class="globe-line line-b"></span><span class="globe-line line-c"></span></div>
+        <div class="passport-card"><div class="passport-sun">✦</div><div class="passport-label">PASSPORT</div><div class="passport-emblem">◎</div><div class="passport-bottom">TRAVEL DOCUMENT</div></div>
+        <div class="ticket"><span>YOUR NEXT CHAPTER</span><b>READY WHEN YOU ARE</b><i>✈</i></div>
+        <div class="visual-stamp">PLAN<br>PREPARE<br>GO <span>↗</span></div>
+      </div>
+    </section>
+
+    <section class="country-strip" aria-labelledby="country-title">
+      <div class="country-icon" aria-hidden="true">⌖</div>
+      <div class="country-copy">
+        <h2 id="country-title">Start with the right official source</h2>
+        <p>Appointment rules depend on the country and service you need. Choose a country to keep it in mind while you plan.</p>
+      </div>
+      <label class="country-select">
+        <span class="sr-only">Choose a country or region</span>
+        <select ng-model="vm.country" ng-options="country for country in vm.countries" aria-label="Choose a country or region">
+          <option value="">Choose a country or region</option>
+        </select>
+      </label>
+      <p class="country-message" ng-if="vm.country">Selected: <strong>{{vm.country}}</strong>. Check its official government passport website for current requirements and booking links.</p>
+    </section>
+
+    <section class="steps-section section-shell" id="steps">
+      <div class="section-heading">
+        <div><span class="section-kicker">A SIMPLE STARTING POINT</span><h2>Three steps to feel prepared.</h2></div>
+        <p>Use this general guide to get organized. The official passport authority decides the exact process.</p>
+      </div>
+      <div class="step-grid">
+        <article class="step-card"><div class="step-top"><span class="step-number">01</span><span class="step-icon">⌕</span></div><h3>Find your official service</h3><p>Visit the government passport website for your country and select the service that matches your situation.</p><a href="#official-source">Learn what to verify <span aria-hidden="true">↗</span></a></article>
+        <article class="step-card"><div class="step-top"><span class="step-number">02</span><span class="step-icon">▤</span></div><h3>Review the requirements</h3><p>Check the current document list, application forms, fees, photo rules, and appointment instructions.</p><a href="#prepare">See preparation tips <span aria-hidden="true">↗</span></a></article>
+        <article class="step-card"><div class="step-top"><span class="step-number">03</span><span class="step-icon">✓</span></div><h3>Confirm before you go</h3><p>Use the official confirmation message to verify your appointment time, address, and what to bring.</p><a href="#checklist">Make a checklist <span aria-hidden="true">↗</span></a></article>
+      </div>
+    </section>
+
+    <section class="prepare-section" id="prepare">
+      <div class="section-shell prepare-layout">
+        <div class="prepare-copy"><span class="section-kicker">BE READY, NOT RUSHED</span><h2>A little preparation<br>goes a long way.</h2><p>Exact requirements vary. Use these prompts to make sure you have checked the official instructions for your appointment.</p><a class="button-light" href="#checklist">Open my checklist <span aria-hidden="true">→</span></a></div>
+        <div class="prepare-list">
+          <article><span class="prepare-icon">01</span><div><h3>Application and identity documents</h3><p>Confirm which completed forms and original or supporting documents are required.</p></div><span class="prepare-arrow" aria-hidden="true">↗</span></article>
+          <article><span class="prepare-icon">02</span><div><h3>Photograph and fees</h3><p>Check photo specifications, payment methods, fee amounts, and any extra service charges.</p></div><span class="prepare-arrow" aria-hidden="true">↗</span></article>
+          <article><span class="prepare-icon">03</span><div><h3>Appointment details</h3><p>Save the confirmation and verify the office address, arrival time, and entry instructions.</p></div><span class="prepare-arrow" aria-hidden="true">↗</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="checklist-section section-shell" id="checklist">
+      <div class="checklist-heading">
+        <div><span class="section-kicker">YOUR PERSONAL PLAN</span><h2>Appointment checklist</h2><p>Tick off the general planning steps as you complete them. Your checklist is saved in this browser.</p></div>
+        <div class="checklist-actions"><span class="progress-label">{{vm.completedCount()}} of {{vm.tasks.length}} done</span><button class="button-outline" ng-click="vm.printChecklist()">Print checklist <span aria-hidden="true">⎙</span></button></div>
+      </div>
+      <div class="progress-track" role="progressbar" aria-label="Checklist completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{vm.progress()}}"><span ng-style="{'width': vm.progress() + '%'}"></span></div>
+      <div class="task-list">
+        <label class="task-row" ng-repeat="task in vm.tasks track by task.id" ng-class="{'task-done': task.done}">
+          <input type="checkbox" ng-model="task.done" ng-change="vm.saveTasks()">
+          <span class="custom-check" aria-hidden="true">✓</span>
+          <span class="task-content"><strong>{{task.title}}</strong><small>{{task.detail}}</small></span>
+          <span class="task-status">{{task.done ? 'Done' : 'To do'}}</span>
+        </label>
+      </div>
+      <button class="reset-link" ng-click="vm.resetTasks()">Reset checklist</button>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <div class="section-shell faq-layout">
+        <div class="faq-intro"><span class="section-kicker">GOOD TO KNOW</span><h2>Questions before appointment day?</h2><p>These are general reminders. For an answer about your case, check with the official passport authority.</p></div>
+        <div class="faq-list">
+          <article class="faq-item" ng-repeat="faq in vm.faqs track by $index" ng-class="{'faq-open': vm.openFaq === $index}">
+            <button class="faq-question" ng-click="vm.toggleFaq($index)" aria-expanded="{{vm.openFaq === $index}}"><span>{{faq.question}}</span><span class="faq-plus" aria-hidden="true">{{vm.openFaq === $index ? '−' : '+'}}</span></button>
+            <div class="faq-answer" ng-if="vm.openFaq === $index"><p>{{faq.answer}}</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="official-note section-shell" id="official-source">
+      <div class="official-mark" aria-hidden="true">i</div>
+      <div><span class="section-kicker">IMPORTANT</span><h2>Use the official passport authority for final answers.</h2><p>This independent student project is for general organization only. It is not a government website, does not book appointments, and does not verify passport applications. Rules and appointment availability can change.</p></div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">P</span><span class="brand-name">Passport<span>Guide</span></span></a><span>Plan thoughtfully. Travel confidently.</span><a href="#official-source">Information disclaimer</a></footer>
+</body>
+</html>

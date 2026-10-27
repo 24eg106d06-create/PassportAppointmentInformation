@@ -1,0 +1,9 @@
+{
+  "name": "passport-appointment-information",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A JavaScript and AngularJS passport appointment information demo",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
